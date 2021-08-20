@@ -1,24 +1,21 @@
 import { Component } from "@angular/core";
-import { Product } from "./product.model";
-import { ProductRepository } from "./product.repository";
+import { Product } from "../model/product.model";
+import { ProductRepository } from "../model/product.repository";
 
 @Component({
     selector: "store",
     templateUrl: "store.component.html"
 })
-export class ProductComponent {
-    public products: Product[];
-    public categories: string[];
-
+export class StoreComponent {
     constructor(private repository: ProductRepository) {
 
     }
 
-    get Products(): Product[] {
+    get products(): Product[] {
         return this.repository.getProducts();
     }
 
-    get Categories(): string[] {
+    get categories(): string[] {
         return this.repository.getCategories();
     }
 
